@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome!{% endblock %}
+
+{% block stylesheets %}
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100i,300,400,600,700" rel="stylesheet">
+
+    <!-- Plugins -->
+    <link rel="stylesheet" href="{{asset('front/css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('front/css/animate.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('front/css/helpers.css')}}" />
+    <link rel="stylesheet" href="{{asset('front/css/et-line.css')}}" />
+    <link rel="stylesheet" href="{{asset('front/css/fontawesome-all.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('front/css/magnific-popup.css')}}" />
+    <link rel="stylesheet" href="{{asset('front/css/owl.carousel.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('front/css/owl.theme.default.min.css')}}" />
+
+    <!-- Core Style Css -->
+    <link rel="stylesheet" href="{{asset('front/css/style.css')}}" />
+
+{% endblock %}
+
+{% block body %}
+
+    {# NAVBAR #}
+
+    {% block content %}
+    {% endblock%}
+{% endblock %}
+
+{% block javascripts %}
+    <!-- jQuery -->
+    <script src="{{ asset('front/js/jquery-3.0.0.min.js') }}"></script>
+
+    <script src="{{asset('front/js/jquery-migrate-3.0.0.min.js')}}"></script>
+
+    <!-- popper.min -->
+    <script src="{{asset('front/js/popper.min.js')}}"></script>
+
+    <!-- bootstrap -->
+    <script src="{{ asset('front/js/bootstrap.min.js') }}"></script>
+
+    <!-- scrollIt -->
+    <script src="{{ asset('front/js/scrollIt.min.js') }}"></script>
+
+    <!-- animated.headline -->
+    <script src="{{ asset('front/js/animated.headline.js') }}"></script>
+
+    <!-- jquery.waypoints.min -->
+    <script src="{{asset('front/js/jquery.waypoints.min.js')}}"></script>
+
+    <!-- jquery.counterup.min -->
+    <script src="{{asset('front/js/jquery.counterup.min.js')}}"></script>
+
+    <!-- owl carousel -->
+    <script src="{{asset('front/js/owl.carousel.min.js')}}"></script>
+
+    <!-- jquery.magnific-popup js -->
+    <script src="{{asset('front/js/jquery.magnific-popup.min.js')}}"></script>
+
+    <!-- stellar js -->
+    <script src="{{asset('front/js/jquery.stellar.min.js')}}"></script>
+
+    <!-- isotope.pkgd.min js -->
+    <script src="{{ asset('front/js/isotope.pkgd.min.js') }}"></script>
+
+    <!-- validator js -->
+    <script src="{{ asset('front/js/validator.js') }}"></script>
+
+    <!-- custom scripts -->
+    <script src="{{ asset('front/js/script.js') }}"></script>
+{% endblock %}
