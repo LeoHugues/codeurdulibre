@@ -692,6 +692,14 @@ span, a, a:hover {
     margin-bottom: 10px;
 }
 
+#cd-bundle {
+    font-size: 2.5rem !important;
+}
+
+.number .container {
+    min-height: 400px;
+}
+
 /* ----------------------------------------------------------------
 				09 Portfolio
 -----------------------------------------------------------------*/
@@ -912,9 +920,7 @@ span, a, a:hover {
     background: transparent;
     border: 0;
 }
-.contact .info {
-    margin-top: 50px;
-}
+
 .contact .info .item .icon {
     float: left;
     padding-top: 5px;
@@ -925,6 +931,7 @@ span, a, a:hover {
     margin-left: 45px;
     padding-left: 15px;
     border-left: 1px solid rgba(200, 200, 200, 0.4);
+    width: 100%;
 }
 .contact .info .item .cont h6 {
     font-size: 14px;
