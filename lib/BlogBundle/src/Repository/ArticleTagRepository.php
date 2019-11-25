@@ -1,26 +1,26 @@
 <?php
 
-namespace App\Repository;
+namespace Codeurdulibre\BlogBundle\src\Repository;
 
-use App\Entity\Article;
+use Codeurdulibre\BlogBundle\src\Entity\ArticleTag;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method Article|null find($id, $lockMode = null, $lockVersion = null)
- * @method Article|null findOneBy(array $criteria, array $orderBy = null)
- * @method Article[]    findAll()
- * @method Article[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method ArticleTag|null find($id, $lockMode = null, $lockVersion = null)
+ * @method ArticleTag|null findOneBy(array $criteria, array $orderBy = null)
+ * @method ArticleTag[]    findAll()
+ * @method ArticleTag[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ArticleRepository extends ServiceEntityRepository
+class ArticleTagRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Article::class);
+        parent::__construct($registry, ArticleTag::class);
     }
 
     // /**
-    //  * @return Article[] Returns an array of Article objects
+    //  * @return ArticleTag[] Returns an array of ArticleTag objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class ArticleRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Article
+    public function findOneBySomeField($value): ?ArticleTag
     {
         return $this->createQueryBuilder('a')
             ->andWhere('a.exampleField = :val')
