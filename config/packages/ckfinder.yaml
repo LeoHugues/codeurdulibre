@@ -1,0 +1,9 @@
+
+ckfinder:
+  connector:
+    authenticationClass: App\CustomCKFinderAuth\CustomCKFinderAuth
+    resourceTypes:
+      Images:
+        name: blog
+        backend: default
+        directory: blog
