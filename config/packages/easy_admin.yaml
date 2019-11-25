@@ -18,11 +18,62 @@ easy_admin:
       - { label: 'Blog'}
       - { entity: "Article", label: 'Mes Articles', icon: 'users'}
       - { entity: "ArticleCategory", label: 'Catégories', icon: 'users'}
+      - { entity: "ArticleTag", label: 'Tag', icon: 'users'}
+      - { entity: "User", label: 'user', icon: 'users'}
 
   entities:
     Article:
-      class: Codeurdulibre\BlogBundle\src\Entity\Article
+      class: App\Entity\Article
       label: "Articles"
+      form:
+        title: "Ajouter un article"
+        fields:
+          - { type: 'group', columns: 12, label: "Contenu" }
+          - { property: 'title', type: 'text'}
+          - { property: 'content', type: 'fos_ckeditor' , type_options:{ 'config': { 'toolbar': 'full' } }}
+          - { type: 'group', columns: 12, label: "Réglage" }
+          - { property: 'imagePath', type: 'CKSource\Bundle\CKFinderBundle\Form\Type\CKFinderFileChooserType'}
+          - { property: 'category', type: 'easyadmin_autocomplete'}
+          - { property: 'tags', type: 'easyadmin_autocomplete'}
+          - { property: 'publicationDate', type: 'date', label: "Date de publication"}
+          - { property: 'isPublished', label: "Publier"}
+          - { property: 'referArticles', type: 'easyadmin_autocomplete', label: "Articles en lien"}
+
+      list:
+        title: "Articles les plus récents"
+        fields: ['id', 'title', 'publicationDate', { property: 'filename', type: 'image', height: 'lg', base_path: '/' }]
+
+      edit:
+        title: "Modifier l'article"
+
     ArticleCategory:
-      class: Codeurdulibre\BlogBundle\src\Entity\ArticleCategory
+      class: App\Entity\ArticleCategory
       label: "Categorie"
+
+    ArticleTag:
+      class: App\Entity\ArticleTag
+      label: "Tag"
+
+    User:
+      class: App\Entity\User
+      controller: App\Controller\UserController
+      label: "User"
+      form:
+        title: "Ajouter un utilisateur"
+        fields:
+          - { property: 'email' }
+          - property: 'password'
+            type: 'repeated'
+            type_options:
+              type: Symfony\Component\Form\Extension\Core\Type\PasswordType
+              required: false
+              first_options: { label: 'Mot de passe' }
+              second_options: { label: 'Confirmer le mot de passe' }
+              invalid_message: fos_user.password.mismatch
+          - property: 'roles'
+            type: 'choice'
+            type_options:
+              mapped: true
+              expanded: true
+              multiple: true
+              choices: { 'Administrateur': 'ROLE_ADMIN' }

@@ -1,26 +1,26 @@
 <?php
 
-namespace Codeurdulibre\BlogBundle\src\Repository;
+namespace App\Repository;
 
-use Codeurdulibre\BlogBundle\src\Entity\ArticleCategory;
+use App\Entity\ArticleComment;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method ArticleCategory|null find($id, $lockMode = null, $lockVersion = null)
- * @method ArticleCategory|null findOneBy(array $criteria, array $orderBy = null)
- * @method ArticleCategory[]    findAll()
- * @method ArticleCategory[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method ArticleComment|null find($id, $lockMode = null, $lockVersion = null)
+ * @method ArticleComment|null findOneBy(array $criteria, array $orderBy = null)
+ * @method ArticleComment[]    findAll()
+ * @method ArticleComment[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ArticleCategoryRepository extends ServiceEntityRepository
+class ArticleCommentRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, ArticleCategory::class);
+        parent::__construct($registry, ArticleComment::class);
     }
 
     // /**
-    //  * @return ArticleCategory[] Returns an array of ArticleCategory objects
+    //  * @return ArticleComment[] Returns an array of ArticleComment objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class ArticleCategoryRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?ArticleCategory
+    public function findOneBySomeField($value): ?ArticleComment
     {
         return $this->createQueryBuilder('a')
             ->andWhere('a.exampleField = :val')

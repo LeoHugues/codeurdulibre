@@ -1,15 +1,15 @@
 <?php
 
-namespace Codeurdulibre\BlogBundle\src\Entity;
+namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="Codeurdulibre\BlogBundle\src\Repository\ArticleTagRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ArticleCategoryRepository")
  */
-class ArticleTag
+class ArticleCategory
 {
     /**
      * @ORM\Id()
@@ -21,10 +21,10 @@ class ArticleTag
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $TagName;
+    private $categoryName;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Article", mappedBy="tags")
+     * @ORM\OneToMany(targetEntity="App\Entity\Article", mappedBy="category")
      */
     private $articles;
 
@@ -38,14 +38,14 @@ class ArticleTag
         return $this->id;
     }
 
-    public function getTagName(): ?string
+    public function getCategoryName(): ?string
     {
-        return $this->TagName;
+        return $this->categoryName;
     }
 
-    public function setTagName(string $TagName): self
+    public function setCategoryName(string $categoryName): self
     {
-        $this->TagName = $TagName;
+        $this->categoryName = $categoryName;
 
         return $this;
     }
@@ -62,7 +62,7 @@ class ArticleTag
     {
         if (!$this->articles->contains($article)) {
             $this->articles[] = $article;
-            $article->addTag($this);
+            $article->setCategory($this);
         }
 
         return $this;
@@ -72,7 +72,10 @@ class ArticleTag
     {
         if ($this->articles->contains($article)) {
             $this->articles->removeElement($article);
-            $article->removeTag($this);
+            // set the owning side to null (unless already changed)
+            if ($article->getCategory() === $this) {
+                $article->setCategory(null);
+            }
         }
 
         return $this;

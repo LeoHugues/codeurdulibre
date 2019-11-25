@@ -1,11 +1,11 @@
 <?php
 
-namespace Codeurdulibre\BlogBundle\src\Entity;
+namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="Codeurdulibre\BlogBundle\src\Repository\ArticleCommentRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ArticleCommentRepository")
  */
 class ArticleComment
 {

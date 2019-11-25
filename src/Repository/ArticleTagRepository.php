@@ -1,26 +1,26 @@
 <?php
 
-namespace Codeurdulibre\BlogBundle\src\Repository;
+namespace App\Repository;
 
-use Codeurdulibre\BlogBundle\src\Entity\ArticleComment;
+use App\Entity\ArticleTag;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method ArticleComment|null find($id, $lockMode = null, $lockVersion = null)
- * @method ArticleComment|null findOneBy(array $criteria, array $orderBy = null)
- * @method ArticleComment[]    findAll()
- * @method ArticleComment[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method ArticleTag|null find($id, $lockMode = null, $lockVersion = null)
+ * @method ArticleTag|null findOneBy(array $criteria, array $orderBy = null)
+ * @method ArticleTag[]    findAll()
+ * @method ArticleTag[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ArticleCommentRepository extends ServiceEntityRepository
+class ArticleTagRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, ArticleComment::class);
+        parent::__construct($registry, ArticleTag::class);
     }
 
     // /**
-    //  * @return ArticleComment[] Returns an array of ArticleComment objects
+    //  * @return ArticleTag[] Returns an array of ArticleTag objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class ArticleCommentRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?ArticleComment
+    public function findOneBySomeField($value): ?ArticleTag
     {
         return $this->createQueryBuilder('a')
             ->andWhere('a.exampleField = :val')

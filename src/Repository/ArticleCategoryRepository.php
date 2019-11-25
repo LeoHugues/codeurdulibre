@@ -1,26 +1,26 @@
 <?php
 
-namespace Codeurdulibre\BlogBundle\src\Repository;
+namespace App\Repository;
 
-use Codeurdulibre\BlogBundle\src\Entity\Article;
+use App\Entity\ArticleCategory;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method Article|null find($id, $lockMode = null, $lockVersion = null)
- * @method Article|null findOneBy(array $criteria, array $orderBy = null)
- * @method Article[]    findAll()
- * @method Article[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method ArticleCategory|null find($id, $lockMode = null, $lockVersion = null)
+ * @method ArticleCategory|null findOneBy(array $criteria, array $orderBy = null)
+ * @method ArticleCategory[]    findAll()
+ * @method ArticleCategory[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ArticleRepository extends ServiceEntityRepository
+class ArticleCategoryRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Article::class);
+        parent::__construct($registry, ArticleCategory::class);
     }
 
     // /**
-    //  * @return Article[] Returns an array of Article objects
+    //  * @return ArticleCategory[] Returns an array of ArticleCategory objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class ArticleRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Article
+    public function findOneBySomeField($value): ?ArticleCategory
     {
         return $this->createQueryBuilder('a')
             ->andWhere('a.exampleField = :val')

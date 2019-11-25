@@ -1,15 +1,15 @@
 <?php
 
-namespace Codeurdulibre\BlogBundle\src\Entity;
+namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="Codeurdulibre\BlogBundle\src\Repository\ArticleCategoryRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ArticleTagRepository")
  */
-class ArticleCategory
+class ArticleTag
 {
     /**
      * @ORM\Id()
@@ -21,10 +21,10 @@ class ArticleCategory
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $categoryName;
+    private $TagName;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Article", mappedBy="category")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Article", mappedBy="tags")
      */
     private $articles;
 
@@ -38,14 +38,14 @@ class ArticleCategory
         return $this->id;
     }
 
-    public function getCategoryName(): ?string
+    public function getTagName(): ?string
     {
-        return $this->categoryName;
+        return $this->TagName;
     }
 
-    public function setCategoryName(string $categoryName): self
+    public function setTagName(string $TagName): self
     {
-        $this->categoryName = $categoryName;
+        $this->TagName = $TagName;
 
         return $this;
     }
@@ -62,7 +62,7 @@ class ArticleCategory
     {
         if (!$this->articles->contains($article)) {
             $this->articles[] = $article;
-            $article->setCategory($this);
+            $article->addTag($this);
         }
 
         return $this;
@@ -72,10 +72,7 @@ class ArticleCategory
     {
         if ($this->articles->contains($article)) {
             $this->articles->removeElement($article);
-            // set the owning side to null (unless already changed)
-            if ($article->getCategory() === $this) {
-                $article->setCategory(null);
-            }
+            $article->removeTag($this);
         }
 
         return $this;
