@@ -486,15 +486,10 @@
 
 	<!-- =====================================
 	==== Start Contact -->
-	<section class="contact section-padding bg-img" data-overlay-dark="8" data-background="{{asset('front/image/bg-contact.jpg')}}" data-scroll-index="6">
-		<div class="container">
-			<div class="row mb-50">
-				<!-- Section-Head -->
-				<div class="section-head full-width mb-50">
-					<h4 class="title">Contact</h4>
-				</div>
 
-				<div class="col-md-8 mt-50">
+	{# Original form
+
+	<div class="col-md-8 mt-50">
 					<form class="form full-width" id="contact-form" method="post" action="contact.php">
 						<div class="messages"></div>
 
@@ -539,6 +534,67 @@
 						</div>
 					</form>
 				</div>
+#}
+	<section class="contact section-padding bg-img" data-overlay-dark="8" data-background="{{asset('front/image/bg-contact.jpg')}}" data-scroll-index="6">
+		<div class="container">
+			<div class="row mb-50">
+				<!-- Section-Head -->
+				<div class="col-md-8 mt-50">
+					{{ form_start(contact_form, {'attr': {'class': 'form full-width', 'id': 'contact-form'}}) }}
+					<div class="messages"></div>
+
+					<div class="controls">
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									{{ form_widget(contact_form.username) }}
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group">
+									{{ form_widget(contact_form.email) }}
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									{{ form_widget(contact_form.subject) }}
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									{{ form_widget(contact_form.message) }}
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									{{ form_widget(contact_form.captcha) }}
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<span class="buton buton-lg">
+										{{ form_row(contact_form.submit) }}
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="section-head full-width mb-50">
+					<h4 class="title">Contact</h4>
+				</div>
+				{{ form_end(contact_form) }}
 
 				<div class="info col-md-4 mt-50">
 						<div class="col-md-12">

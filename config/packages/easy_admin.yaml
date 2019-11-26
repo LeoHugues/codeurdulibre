@@ -52,6 +52,14 @@ easy_admin:
             class: App\Entity\ArticleTag
             label: "Tag"
 
+        Contact:
+            class: App\Entity\Contact
+            label: 'Contact via le site'
+            disabled_actions: ['search', 'delete', 'edit', 'new']
+            list:
+                title: "Prise de contact"
+                fields: ['id', 'username', 'email', 'subject', 'message']
+
         User:
             class: App\Entity\User
             controller: App\Controller\UserController

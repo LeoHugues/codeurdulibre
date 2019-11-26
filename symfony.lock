@@ -2,6 +2,18 @@
     "aws/aws-sdk-php": {
         "version": "3.121.1"
     },
+    "beelab/recaptcha2-bundle": {
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "2.0",
+            "ref": "246da6d0e345e9ab6773dd2f46c8a138e2527ef6"
+        },
+        "files": [
+            "config/packages/beelab_recaptcha2.yaml"
+        ]
+    },
     "ckfinder/ckfinder-symfony-bundle": {
         "version": "3.5.1"
     },
@@ -108,19 +120,6 @@
     },
     "egulias/email-validator": {
         "version": "2.1.11"
-    },
-    "excelwebzone/recaptcha-bundle": {
-        "version": "1.5",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
-            "version": "1.5",
-            "ref": "fd4da7bc71749db65bc83abf5d164bfa9c839cf4"
-        },
-        "files": [
-            "config/packages/dev/ewz_recaptcha.yaml",
-            "config/packages/ewz_recaptcha.yaml"
-        ]
     },
     "fig/link-util": {
         "version": "1.0.0"
