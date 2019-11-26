@@ -33,6 +33,11 @@ class ArticleCategory
         $this->articles = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->getCategoryName();
+    }
+
     public function getId(): ?int
     {
         return $this->id;

@@ -73,6 +73,12 @@ class Article
         $this->tags = new ArrayCollection();
         $this->comments = new ArrayCollection();
         $this->referArticles = new ArrayCollection();
+        $this->updateAt = new \DateTime();
+    }
+
+    public function __toString()
+    {
+        return $this->getTitle();
     }
 
     public function getId(): ?int
