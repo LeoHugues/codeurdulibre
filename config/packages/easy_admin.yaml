@@ -20,10 +20,11 @@ easy_admin:
 
         menu:
           - { label: 'Blog'}
-          - { entity: "Article", label: 'Mes Articles', icon: 'users'}
-          - { entity: "ArticleCategory", label: 'Catégories', icon: 'users'}
-          - { entity: "ArticleTag", label: 'Tag', icon: 'users'}
-          - { entity: "User", label: 'user', icon: 'users'}
+          - { entity: "Article", label: 'Mes Articles', icon: 'book'}
+          - { entity: "ArticleCategory", label: 'Catégories', icon: 'bookmark'}
+          - { entity: "ArticleTag", label: 'Tag', icon: 'tags'}
+          - { label: 'Utilisateurs'}
+          - { entity: "User", label: 'Utilisateurs', icon: 'users'}
 
     entities:
         Article:
