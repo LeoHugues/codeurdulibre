@@ -23,6 +23,8 @@ easy_admin:
           - { entity: "Article", label: 'Mes Articles', icon: 'book'}
           - { entity: "ArticleCategory", label: 'Catégories', icon: 'bookmark'}
           - { entity: "ArticleTag", label: 'Tag', icon: 'tags'}
+          - { label: 'Contact'}
+          - { entity: "Contact", label: 'Contacts', icon: 'envelope-o'}
           - { label: 'Utilisateurs'}
           - { entity: "User", label: 'Utilisateurs', icon: 'users'}
 

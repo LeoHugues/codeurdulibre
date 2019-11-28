@@ -17,6 +17,11 @@
 	<!-- =====================================
 	==== Start Navbar -->
 	<nav class="navbar navbar-expand-lg">
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success">
+				{{ message }}
+			</div>
+		{% endfor %}
 		<div class="container">
 
 		  <!-- Logo -->
@@ -489,59 +494,19 @@
 
 	{# Original form
 
-	<div class="col-md-8 mt-50">
-					<form class="form full-width" id="contact-form" method="post" action="contact.php">
-						<div class="messages"></div>
 
-						<div class="controls">
-
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<input id="form_name" type="text" name="name" placeholder="Nom *" required="required">
-									</div>
-								</div>
-
-								<div class="col-md-6">
-									<div class="form-group">
-										<input id="form_email" type="email" name="email" placeholder="Email *" required="required">
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group">
-										<input id="form_subject" type="text" name="subject" placeholder="Objet">
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group">
-										<textarea id="form_message" name="message" placeholder="Message *" rows="4" required="required"></textarea>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group">
-									<span class="buton buton-lg">
-										<button type="submit" front="Send Message" back="&#xf35d;"></button>
-									</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</form>
-				</div>
 #}
 	<section class="contact section-padding bg-img" data-overlay-dark="8" data-background="{{asset('front/image/bg-contact.jpg')}}" data-scroll-index="6">
 		<div class="container">
+			<div class="section-head full-width mb-50">
+				<h4 class="title">Contact</h4>
+			</div>
+
 			<div class="row mb-50">
 				<!-- Section-Head -->
 				<div class="col-md-8 mt-50">
-					{{ form_start(contact_form, {'attr': {'class': 'form full-width', 'id': 'contact-form'}}) }}
-					<div class="messages"></div>
+					{{ form_start(contact_form, {'attr': {'class': 'form full-width'}}) }}
+					<div class="messages">{{ form_errors(contact_form) }}</div>
 
 					<div class="controls">
 
@@ -572,29 +537,22 @@
 								</div>
 							</div>
 						</div>
+
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group">
 									{{ form_widget(contact_form.captcha) }}
 								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
 								<div class="form-group">
 									<span class="buton buton-lg">
-										{{ form_row(contact_form.submit) }}
+										{{ form_widget(contact_form.submit) }}
 									</span>
 								</div>
 							</div>
 						</div>
 					</div>
+					{{ form_end(contact_form) }}
 				</div>
-
-				<div class="section-head full-width mb-50">
-					<h4 class="title">Contact</h4>
-				</div>
-				{{ form_end(contact_form) }}
 
 				<div class="info col-md-4 mt-50">
 						<div class="col-md-12">

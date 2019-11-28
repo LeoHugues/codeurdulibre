@@ -18,29 +18,34 @@ class ContactType extends AbstractType
         $builder
             ->add('username', null, [
                 'attr' => [
-                    'placeholder' => 'Nom / Prénom'
+                    'placeholder' => 'Nom / Prénom *',
                 ]
             ])
             ->add('email', EmailType::class, [
                 'attr' => [
-                    'placeholder' => 'Email'
+                    'placeholder' => 'Email *'
                 ]
             ])
             ->add('subject', null, [
                 'attr' => [
-                    'placeholder' => 'Objet'
+                    'placeholder' => 'Objet *'
                 ]
             ])
             ->add('message', null, [
                 'attr' => [
-                    'placeholder' => 'Message'
+                    'placeholder' => 'Message *'
                 ]
             ])
             ->add('captcha', RecaptchaType::class, [
                 'constraints' => new Recaptcha2(),
                 'required' => true
             ])
-            ->add('submit', SubmitType::class, [])
+            ->add('submit', SubmitType::class, [
+                'attr' => [
+                    'front' => "Envoyer",
+                    'back' => "",
+                ]
+            ])
         ;
     }
 
