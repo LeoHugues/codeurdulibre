@@ -36,7 +36,7 @@ class FrontController extends AbstractController
                 ->setBody(
                     $this->renderView(
                         'email/contact.html.twig',
-                        ['name' => $contact->getUsername()]
+                        ['contact' => $contact]
                     ),
                     'text/html'
                 )

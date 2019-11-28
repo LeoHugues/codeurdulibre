@@ -22,10 +22,10 @@
 				{{ message }}
 			</div>
 		{% endfor %}
-		<div class="container">
+		<div class="container pl-3">
 
 		  <!-- Logo -->
-		  <a class="logo" href="#">Codeur<small>du</small>Libre</a>
+		  <a class="logo" href="{{ path('front') }}">Codeur<small>du</small>Libre</a>
 
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="icon-bar"><i class="fas fa-bars"></i></span>
@@ -94,9 +94,9 @@
 	<section class="hero section-padding" data-scroll-index="1">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-5">
+				<div class="col-lg-5 pl-5 pr-5">
 					<div class="hero-img mb-md50">
-						<img src="{{ asset('front/image/hero.jpg') }}" alt="">
+						<img src="{{ asset('front/image/moi3.jpg') }}" alt="">
 					</div>
 				</div>
 				<div class="col-lg-7">
@@ -106,10 +106,10 @@
 						<p>Travailleur indépendant, je consacre la moitiée de mon temps à l'association : l'Atelier de Claret. Il s'agit d'un tiers lieu, espace de coworking, formation et FABLAB. L'autre moitié de mon temps est dédié aux contrats freelance, en télétravail, avec des Start-Up, PME, SSII, en tant que développeur Symfony.</p>
 
 						<div class="social-icon">
-							<a href="#0">
+							<a href="https://github.com/LeoHugues" target="_blank">
 								<span class="icon"><i class="fab fa-github"></i></span>
 							</a>
-							<a href="#0">
+							<a href="https://www.linkedin.com/in/l%C3%A9o-hugues-b47117b3/" target="_blank">
 								<span class="icon"><i class="fab fa-linkedin-in"></i></span>
 							</a>
 						</div>
@@ -118,7 +118,7 @@
 						  <a href="#0" front="Me contacter" back="&#xf1d8;" data-scroll-nav="6"></a>
 						</span>
 						<span class="buton buton-bord text-center">
-						  <a href="CV.pdf" front="Voir C.V" back="&#xf019;" download="CV.pdf"></a>
+						  <a href="{{asset('front/doc/CV-HUGUES-LEO.pdf')}}" front="Voir C.V" back="&#xf019;" download="CV-LEO.pdf"></a>
 						</span>
 					</div>
 				</div>
@@ -184,12 +184,12 @@
 							<div class="skills-progress"><span data-value='80%'></span></div>
 						</div>
 						<div class="skill">
-							<h6>Javascript & JQuery & Ajax<span>85%</span></h6>
-							<div class="skills-progress"><span data-value='85%'></span></div>
+							<h6>Javascript & JQuery & Ajax<span>75%</span></h6>
+							<div class="skills-progress"><span data-value='75%'></span></div>
 						</div>
 						<div class="skill">
-							<h6>Administration Système Linux<span>75%</span></h6>
-							<div class="skills-progress"><span data-value='75%'></span></div>
+							<h6>Administration Système Linux<span>80%</span></h6>
+							<div class="skills-progress"><span data-value='80%'></span></div>
 						</div>
 					</div>
 				</div>
@@ -279,11 +279,14 @@
 						<span class="blc">~$ composer require </span>
 						<span class="cd-words-wrapper">
 						  <b class="is-visible">easycorp/easyadmin-bundle</b>
-						  <b>doctrine/doctrine-bundle</b>
 						  <b>friendsofsymfony/user-bundle</b>
 						  <b>friendsofsymfony/FOSRestBundle</b>
 						  <b>friendsofsymfony/ckeditor-bundle</b>
+						  <b>sonata-project/admin-bundle</b>
 						  <b>symfony/maker-bundle</b>
+						  <b>symfony/notifier</b>
+						  <b>symfony/swiftmailer-bundle</b>
+						  <b>doctrine/doctrine-bundle</b>
 						  <b>ckfinder/ckfinder-symfony-bundle</b>
 						  <b>nelmio/NelmioApiDocBundle</b>
 						  <b>vich/uploader-bundle</b>
@@ -393,94 +396,42 @@
 					<h4 class="title">Le Blog</h4>
 				</div>
 
-				<div class="owl-carousel owl-theme">
-					<div class="pitem">
-						<div class="post-img">
-							<a href="#0">
-								<img src="{{asset('front/image/1.jpg')}}" alt="">
-							</a>
-							<a href="#0" class="tag">WordPress</a>
-						</div>
-						<div class="content">
-							<h3>
-								<a href="#0">The Best WordPress Real Estate Themes & Plugins</a>
-							</h3>
-							<p>Real estate is an uber-competitive marketplace full of businesses competing for the same set of consumers. They're all looking for …</p>
-							<div class="info">
-								<span class="more">
-									<a href="#0">Read More</a>
-								</span>
-								<span class="by">
-									<a href="#0">By : Admin</a>
-								</span>
-							</div>
-						</div>
-					</div>
-					<div class="pitem">
-						<div class="post-img">
-							<a href="#0">
-								<img src="{{ asset('front/image/2.jpg') }}" alt="">
-							</a>
-							<a href="#0" class="tag">Trends</a>
-						</div>
-						<div class="content">
-							<h3>
-								<a href="#0">4 Deadly Sins of UI and UX Design You Need to Avoid</a>
-							</h3>
-							<p>It’s not wrong to say that perfection in web design is something that doesn't really exist. But that doesn't mean …</p>
-							<div class="info">
-								<span class="more">
-									<a href="#0">Read More</a>
-								</span>
-								<span class="by">
-									<a href="#0">By : Admin</a>
-								</span>
-							</div>
-						</div>
-					</div>
-					<div class="pitem">
-						<div class="post-img">
-							<a href="#0">
-								<img src="{{ asset('front/image/3.jpg') }}" alt="">
-							</a>
-							<a href="#0" class="tag">Trends</a>
-						</div>
-						<div class="content">
-							<h3>
-								<a href="#0">The Best Advice for Novice Web Designers in 2018</a>
-							</h3>
-							<p>When you're just getting started, it's hard to know what advice to listen to, and what to ignore. Finding your …</p>
-							<div class="info">
-								<span class="more">
-									<a href="#0">Read More</a>
-								</span>
-								<span class="by">
-									<a href="#0">By : Admin</a>
-								</span>
-							</div>
-						</div>
-					</div>
-					<div class="pitem">
-						<div class="post-img">
-							<img src="{{ asset('front/image/4.jpg') }}" alt="">
-							<a href="#0" class="tag">ThemeForest</a>
-						</div>
-						<div class="content">
-							<h3>
-								<a href="#0">20 Stellar Science Fiction After Effects Templates</a>
-							</h3>
-							<p>We’ve assembled a collection of sci-fi After Effects templates most likely to induce awe and wonder and tried to pick …</p>
-							<div class="info">
-								<span class="more">
-									<a href="#0">Read More</a>
-								</span>
-								<span class="by">
-									<a href="#0">By : Admin</a>
-								</span>
-							</div>
-						</div>
+				<div class="col-md-12">
+					<div class="col-lg-8 offset-lg-2">
+						<h5 class="mb-3"> À venir...</h5>
+						<p>
+							En cours de construction, contenu bientôt disponible, info, tuto, actu, astuces, réalisations...
+						</p>
 					</div>
 				</div>
+
+
+{#				<div class="owl-carousel owl-theme">#}
+{#					{% for article in articles %}#}
+{#					<div class="pitem">#}
+{#						<div class="post-img">#}
+{#							<a href="#0">#}
+{#								<img src="{{ asset(article.imagePath) }}" alt="">#}
+{#							</a>#}
+{#							<a href="#0" class="tag">{{ article.category }}</a>#}
+{#						</div>#}
+{#						<div class="content">#}
+{#							<h3>#}
+{#								<a href="#0">{{ article.title }}</a>#}
+{#							</h3>#}
+{#							<p>{{ article.content | raw | easyadmin_truncate(100, true) }}</p>#}
+{#							<div class="info">#}
+{#								<span class="more">#}
+{#									<a href="#0">Read More</a>#}
+{#								</span>#}
+{#								<span class="by">#}
+{#									<a href="#0">By : Admin</a>#}
+{#								</span>#}
+{#							</div>#}
+{#						</div>#}
+{#					</div>#}
+{#					{% endfor %}#}
+{#				</div>#}
 
 			</div>
 		</div>
@@ -496,7 +447,7 @@
 
 
 #}
-	<section class="contact section-padding bg-img" data-overlay-dark="8" data-background="{{asset('front/image/bg-contact.jpg')}}" data-scroll-index="6">
+	<section class="contact section-padding bg-img" data-overlay-dark="8" data-background="{{asset('front/image/bg_1.jpg')}}" data-scroll-index="6">
 		<div class="container">
 			<div class="section-head full-width mb-50">
 				<h4 class="title">Contact</h4>
@@ -506,19 +457,21 @@
 				<!-- Section-Head -->
 				<div class="col-md-8 mt-50">
 					{{ form_start(contact_form, {'attr': {'class': 'form full-width'}}) }}
-					<div class="messages">{{ form_errors(contact_form) }}</div>
+					<div class="messages"></div>
 
 					<div class="controls">
 
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
+									{{ form_errors(contact_form.username) }}
 									{{ form_widget(contact_form.username) }}
 								</div>
 							</div>
 
 							<div class="col-md-6">
 								<div class="form-group">
+									{{ form_errors(contact_form.email) }}
 									{{ form_widget(contact_form.email) }}
 								</div>
 							</div>
@@ -526,6 +479,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group">
+									{{ form_errors(contact_form.subject) }}
 									{{ form_widget(contact_form.subject) }}
 								</div>
 							</div>
@@ -533,6 +487,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group">
+									{{ form_errors(contact_form.message) }}
 									{{ form_widget(contact_form.message) }}
 								</div>
 							</div>
@@ -541,6 +496,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group">
+									{{ form_errors(contact_form.captcha) }}
 									{{ form_widget(contact_form.captcha) }}
 								</div>
 								<div class="form-group">
