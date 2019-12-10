@@ -1,6 +1,8 @@
 
 ckfinder:
   connector:
+    licenseName: "codeurdulibre.fr"
+    licenseKey: "*4?6-*1**-J**9-*K**-*J**-K*V*-2**H"
     authenticationClass: App\CustomCKFinderAuth\CustomCKFinderAuth
     resourceTypes:
       Images:
